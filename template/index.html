@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Merger</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PDF Merger</title>
+    </head>
 
-<style>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
     *{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
         /* background-color: ; */
         overflow: hidden;
+    }
+
+    body {
+        background-color: #090D16;
+        font-family: "Cabin", sans-serif;
+        font-optical-sizing: auto;
+        font-variation-settings:
+        "wdth" 100;
+        color: aliceblue; 
+        font-weight: 700;
     }
 
     .main {
@@ -27,6 +41,11 @@
     .header {
         display: flex;
         justify-content: flex-start;
+        padding: 3rem;
+    }
+
+    .header h1 {
+        font-size: 48px;
     }
 
     .file-container {
@@ -35,22 +54,51 @@
         /* width: ; */
     }
 
+    .file-container label {
+        font-size: 20px;
+        padding: 1rem 0;
+    }
+
+    .S-btn {
+        margin: 1rem 0;
+        /* border: none; */
+        border: 1px solid aliceblue;
+        border-radius: 1rem;
+        padding: 0.7rem;
+        color: #090D16;
+        font-size: 16px;
+        font-weight: 600;
+        /* background-color: ; */
+        transition: all 0.2s linear;
+        cursor: pointer;
+    }
+
+    .S-btn:hover {
+        background-color: #090D16;
+        color: aliceblue;
+        border: 1px solid aliceblue;
+    }
+
+    /* .fileinput {
+        background-color:;
+    } */
+
 </style>
 
-<body>
-    
-    <div class="main">
-        <div class="header">
-            <h1>PDF Merger</h1>
-        </div>
-        <form action="/merge" method="post" enctype="multipart/form-data">
-            <div class="file-container">
-                <label for="example">Select Your PDFs you want to merger</label>
-                <input type="file" name="pdfs" class="file-container_input" multiple accept=".pdf">
-                <input type="submit">
-            </div>
-        </form>
-    </div>
+    <body>
 
-</body>
+        <div class="main">
+            <div class="header">
+                <h1>PDF Merger</h1>
+            </div>
+            <form action="/merge" method="post" enctype="multipart/form-data">
+                <div class="file-container">
+                    <label for="example">Select Your PDFs you want to merger</label>
+                    <input type="file" name="pdfs" class="fileinput" multiple accept=".pdf">
+                    <input type="submit" class="S-btn">
+                </div>
+            </form>
+        </div>
+
+    </body>
 </html>
